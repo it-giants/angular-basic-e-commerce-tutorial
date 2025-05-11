@@ -10,5 +10,5 @@ import { ProductsListComponent } from './pages/products-list/products-list.compo
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'self-learning';
+  title = 'basic-ecommerce';
 }
