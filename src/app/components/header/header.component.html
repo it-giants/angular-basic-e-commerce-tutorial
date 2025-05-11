@@ -1,0 +1,6 @@
+<header>
+  <div class="container mx-auto flex justify-between items-center">
+    <span class="text-xl cursor-pointer" routerLink="/">{{ title() }}</span>
+    <app-primary-button [label]="`Cart (${cartService.cart().length})`" routerLink="/cart" />
+  </div>
+</header>

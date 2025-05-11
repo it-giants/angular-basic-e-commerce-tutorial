@@ -1,0 +1,24 @@
+<div class="bg-white shadow-md border border-[#cecece] rounded-xl p-6 flex flex-col gap-6 relative h-full">
+  <div class="mx-auto">
+    <img [src]="product().image" [alt]="product().title" class="w-[200px] h-[100px] object-contain">
+  </div>
+
+  <div class="flex flex-col mt-2 gap-2 h-[calc(100%_-_100px)]">
+    <span class="text-md font-bold mb-2">{{ product().title }}</span>
+    <span class="text-sm font-bold text-blue-500 mt-auto">{{ '$' + product().price }}</span>
+    <app-primary-button label="Add to Cart" class="mt-4" (btnClicked)="cartService.addToCart(product())" />
+    
+    <div class="absolute top-2 right-3 text-sm font-bold" [class]="product().stock ? 'text-green-500' : 'text-red-500' ">
+      <!-- It will always be out of stock as we're using fakestoreapi which don't support stock -->
+      @if (product().stock) {
+        <span>{{ product().stock }} left</span>
+      }
+
+      @else {
+        <span>Out of Stock</span>
+      }
+    </div>
+  </div>
+</div>
+
+
